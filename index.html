@@ -6,14 +6,26 @@
 
   <title>Obaya Olarinde | Professional Portfolio</title>
 
-  <meta name="description"
-        content="Professional portfolio of Obaya Olarinde, a business operations and customer relationship professional with interests in technology and cybersecurity.">
+  <meta name="description" content="Professional portfolio of Obaya Olarinde — Business Operations, Customer Relationship Management and Technology.">
 
   <style>
+    :root {
+      --navy: #0b1f33;
+      --navy-light: #123653;
+      --teal: #18b7a0;
+      --teal-dark: #0d8f7d;
+      --white: #ffffff;
+      --light: #f5f8fb;
+      --text: #263746;
+      --muted: #687886;
+      --border: #e3eaf0;
+      --shadow: 0 12px 35px rgba(11, 31, 51, 0.08);
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -21,137 +33,507 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
       line-height: 1.7;
-      color: #243247;
-      background: #f5f8fc;
     }
 
-    header {
-      background: #102a43;
-      color: white;
-      padding: 20px 7%;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    nav h2 {
-      color: #63e6be;
-    }
-
-    nav a {
-      color: white;
+    a {
       text-decoration: none;
-      margin-left: 15px;
-      font-size: 14px;
     }
 
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 31, 51, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      color: var(--white);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #dce8ef;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #102a43, #176b87);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(24,183,160,.18), transparent 30%),
+        linear-gradient(135deg, var(--navy), var(--navy-light));
       color: white;
-      padding: 90px 7%;
+      padding: 105px 0 110px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(34px, 6vw, 54px);
-      line-height: 1.2;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--teal);
+    }
+
+    .hero h2 {
+      max-width: 680px;
+      color: #dce8ef;
+      font-size: clamp(20px, 3vw, 29px);
+      line-height: 1.35;
+      font-weight: 500;
       margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 700px;
-      font-size: 18px;
-      margin-bottom: 25px;
+      max-width: 680px;
+      color: #b9cad6;
+      font-size: 16px;
+      margin-bottom: 32px;
     }
 
-    .button {
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
       display: inline-block;
-      background: #63e6be;
-      color: #102a43;
-      padding: 12px 22px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      margin: 5px 8px 5px 0;
+      padding: 13px 21px;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .2s, opacity .2s;
     }
 
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.3);
+      color: white;
+    }
+
+    .hero-card {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius: 16px;
+    }
+
+    .hero-card small {
+      color: #91a9b8;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .hero-card strong {
+      display: block;
+      color: white;
+      margin-bottom: 22px;
+    }
+
+    .hero-card strong:last-child {
+      margin-bottom: 0;
+    }
+
+    /* GENERAL SECTIONS */
     section {
-      padding: 60px 7%;
+      padding: 90px 0;
     }
 
-    section h2 {
-      color: #102a43;
-      font-size: 29px;
-      margin-bottom: 20px;
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 42px;
     }
 
-    .card {
+    .section-label {
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(30px, 5vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .credential {
+      background: var(--navy);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    .credential .number {
+      color: var(--teal);
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .credential p {
+      color: #b9cad6;
+      margin-top: 6px;
+    }
+
+    /* EXPERIENCE */
+    .experience {
       background: white;
-      padding: 24px;
-      margin: 18px 0;
-      border-radius: 10px;
-      border-left: 4px solid #176b87;
-      box-shadow: 0 4px 15px rgba(16, 42, 67, 0.06);
     }
 
-    .card h3 {
-      color: #176b87;
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-card {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 35px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .experience-card:last-child {
+      border-bottom: none;
+    }
+
+    .experience-date {
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .experience-card h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .experience-card p {
+      color: var(--muted);
+    }
+
+    /* ACHIEVEMENTS */
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .achievement {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .achievement .big {
+      color: var(--teal-dark);
+      font-size: 37px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .achievement h3 {
+      color: var(--navy);
       margin-bottom: 8px;
     }
 
+    .achievement p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* EDUCATION */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .info-card h3 {
+      color: var(--navy);
+      margin-bottom: 9px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* PROJECT */
+    .project {
+      background: var(--navy);
+      color: white;
+    }
+
+    .project .section-heading h2 {
+      color: white;
+    }
+
+    .project .section-heading p {
+      color: #b9cad6;
+    }
+
+    .project-card {
+      padding: 38px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.05);
+      border-radius: 16px;
+    }
+
+    .project-card h3 {
+      color: var(--teal);
+      font-size: 26px;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    .project-card p {
+      color: #c3d1da;
+      max-width: 850px;
+    }
+
+    /* SKILLS */
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .skills span {
-      background: #e1f5f2;
-      color: #102a43;
-      padding: 8px 13px;
-      border-radius: 5px;
+    .skill {
+      padding: 10px 15px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
     }
 
-    .contact a {
-      color: #176b87;
+    /* CONTACT */
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-box {
+      background: var(--light);
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .contact-item {
+      margin-bottom: 22px;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a {
+      color: var(--navy);
+      font-weight: 700;
       overflow-wrap: anywhere;
     }
 
-    footer {
-      background: #102a43;
-      color: white;
-      text-align: center;
-      padding: 25px 7%;
+    .contact-item a:hover {
+      color: var(--teal-dark);
     }
 
-    @media (max-width: 600px) {
-      nav {
+    /* FOOTER */
+    footer {
+      background: #071522;
+      color: #91a9b8;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .nav-inner {
+        padding: 15px 0;
         align-items: flex-start;
       }
 
-      nav div {
-        display: flex;
+      .nav-links {
+        gap: 12px;
         flex-wrap: wrap;
-        gap: 10px;
+        justify-content: flex-end;
       }
 
-      nav a {
-        margin-left: 0;
+      .nav-links a {
+        font-size: 12px;
       }
 
       .hero {
-        padding-top: 65px;
-        padding-bottom: 65px;
+        padding: 75px 0;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .achievement-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
       section {
-        padding: 45px 6%;
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-inner {
+        display: block;
+      }
+
+      .nav-links {
+        margin-top: 12px;
+        justify-content: flex-start;
+      }
+
+      .hero-card {
+        padding: 22px;
+      }
+
+      .project-card {
+        padding: 25px;
       }
     }
   </style>
@@ -159,224 +541,407 @@
 
 <body>
 
-<header>
+  <!-- NAVIGATION -->
   <nav>
-    <h2>Obaya Olarinde</h2>
+    <div class="container nav-inner">
+      <a href="#" class="logo">Obaya <span>Olarinde</span></a>
 
-    <div>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#project">Project</a>
-      <a href="#contact">Contact</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
   </nav>
-</header>
 
-<main>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
 
-  <section class="hero">
-    <h1>Obaya Olarinde</h1>
+      <div>
+        <div class="eyebrow">Professional Portfolio</div>
 
-    <p>
-      Business Operations &amp; Customer Relationship Professional
-      | Technology Enthusiast
-    </p>
+        <h1>
+          Obaya <span>Olarinde</span>
+        </h1>
 
-    <p>
-      I bring together business operations, inventory management,
-      customer service, and a growing interest in networking,
-      cloud computing, and cybersecurity.
-    </p>
+        <h2>
+          Business Operations & Customer Relationship Professional
+          | Technology Enthusiast
+        </h2>
 
-    <a class="button" href="#experience">Explore My Experience</a>
-    <a class="button" href="#contact">Contact Me</a>
-  </section>
+        <p>
+          A results-oriented professional combining experience in
+          business operations, warehouse management, sales and
+          customer relationships with a growing career in technology,
+          networking, cloud computing and cybersecurity.
+        </p>
 
+        <div class="buttons">
+          <a href="#experience" class="btn btn-primary">
+            Explore My Experience
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Let's Connect
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <small>Professional Focus</small>
+        <strong>Business Operations</strong>
+
+        <small>Technology Interest</small>
+        <strong>Networking & Cybersecurity</strong>
+
+        <small>Professional Recognition</small>
+        <strong>GMCPN · 21 October 2026</strong>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ABOUT -->
   <section id="about">
-    <h2>About Me</h2>
+    <div class="container">
 
-    <p>
-      I am a hardworking, responsible, and results-oriented
-      professional with experience in business management,
-      warehouse operations, sales representation, inventory
-      control, and retail customer service.
-    </p>
+      <div class="section-heading">
+        <div class="section-label">About Me</div>
+        <h2>Experience that meets technology.</h2>
+      </div>
 
-    <p>
-      My strengths include stock management, receiving and
-      dispatching goods, record-keeping, customer relationship
-      management, sales development, and team coordination.
-      I am also interested in computer science and developing
-      practical technology solutions.
-    </p>
-  </section>
+      <div class="about-grid">
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
+        <div class="about-text">
+          <p>
+            I am a hardworking, responsible and results-oriented
+            professional with extensive experience in business
+            management, warehouse operations, sales representation,
+            inventory control and retail customer service.
+          </p>
 
-    <div class="card">
-      <h3>Business Management</h3>
-      <p><strong>JB Trinity Ventures</strong></p>
-      <p>
-        Supported business operations, customer relationships,
-        coordination, and day-to-day business activities.
-      </p>
-    </div>
+          <p>
+            I have developed strong skills in stock management,
+            receiving and dispatching goods, record-keeping,
+            customer relationship management, sales development
+            and team coordination.
+          </p>
 
-    <div class="card">
-      <h3>Warehouse Manager &amp; Sales Representative</h3>
-      <p><strong>Latoniky Nigeria Enterprises | 2022–2025</strong></p>
-      <p>
-        Managed inventory, stock records, receiving and dispatching,
-        and stock reconciliation. Worked with P&amp;G and Henkel
-        product lines and supported the sales team in meeting
-        business targets.
-      </p>
-    </div>
+          <p>
+            My interest in Computer Science comes from my desire
+            to understand how computers work and to continually
+            develop practical knowledge that can contribute to
+            new technology solutions.
+          </p>
+        </div>
 
-    <div class="card">
-      <h3>Sales Attendant</h3>
-      <p><strong>242 Colors</strong></p>
-      <p>
-        Supported retail sales, customer service, product handling,
-        and daily sales activities.
-      </p>
+        <div class="credential">
+          <div class="number">GMCPN</div>
+          <p>
+            Inducted by the Computer Professionals
+            (Registration Council of Nigeria)
+          </p>
+
+          <br>
+
+          <div class="number">21/10/2026</div>
+          <p>Professional induction date</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="section-label">Experience</div>
+        <h2>Professional experience built on responsibility and results.</h2>
+        <p>
+          Experience across business operations, warehouse management,
+          sales and customer service.
+        </p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="experience-card">
+          <div class="experience-date">Business Management</div>
+
+          <div>
+            <h3>Business Management</h3>
+            <div class="company">JB Trinity Ventures</div>
+
+            <p>
+              Managed and supported day-to-day business activities,
+              operational coordination, customer relationships and
+              business processes.
+            </p>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-date">2022 — 2025</div>
+
+          <div>
+            <h3>Warehouse Manager & Sales Representative</h3>
+            <div class="company">Latoniky Nigeria Enterprises</div>
+
+            <p>
+              Managed warehouse stock, inventory records, receiving
+              and dispatching of goods, stock reconciliation and
+              coordination with sales representatives. Worked with
+              P&G and Henkel products while supporting the sales team
+              to achieve monthly targets.
+            </p>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-date">Retail Sales</div>
+
+          <div>
+            <h3>Sales Attendant</h3>
+            <div class="company">242 Colors</div>
+
+            <p>
+              Supported customers with product selection, retail
+              sales activities, product handling and daily customer
+              service.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
   <section id="achievements">
-    <h2>Key Achievements</h2>
+    <div class="container">
 
-    <div class="card">
-      <h3>70% Reduction in Stock Discrepancies</h3>
-      <p>
-        Helped improve inventory accuracy and resolve discrepancies
-        between sales representatives and customers.
-      </p>
-    </div>
+      <div class="section-heading">
+        <div class="section-label">Results</div>
+        <h2>Achievements that show measurable impact.</h2>
+      </div>
 
-    <div class="card">
-      <h3>500+ Stock Items Monthly</h3>
-      <p>
-        Handled more than 500 stock items monthly while supporting
-        inventory control and accurate record-keeping.
-      </p>
-    </div>
+      <div class="achievement-grid">
 
-    <div class="card">
-      <h3>Sales Growth Contribution</h3>
-      <p>
-        Contributed to an increase in monthly sales from
-        ₦5 million to ₦15 million through sales support
-        and operational improvements.
-      </p>
-    </div>
-  </section>
+        <div class="achievement">
+          <div class="big">70%</div>
+          <h3>Reduction in Stock Discrepancies</h3>
+          <p>
+            Helped improve stock accuracy and resolve discrepancies
+            between sales representatives and customers.
+          </p>
+        </div>
 
-  <section id="education">
-    <h2>Education &amp; Professional Development</h2>
+        <div class="achievement">
+          <div class="big">500+</div>
+          <h3>Stock Items Monthly</h3>
+          <p>
+            Handled more than 500 stock items monthly while supporting
+            inventory control and accurate records.
+          </p>
+        </div>
 
-    <div class="card">
-      <h3>The Gateway (ICT) Polytechnic, Saapade</h3>
-      <p>
-        Higher National Diploma (HND) in Computer Science,
-        with a focus on Networking and Cloud Computing.
-      </p>
-    </div>
+        <div class="achievement">
+          <div class="big">₦5m → ₦15m</div>
+          <h3>Monthly Sales Growth</h3>
+          <p>
+            Contributed to monthly sales growth through sales support,
+            improved product availability and operational coordination.
+          </p>
+        </div>
 
-    <div class="card">
-      <h3>Moshood Abiola Polytechnic</h3>
-      <p>National Diploma (ND) in Computer Science.</p>
-    </div>
-
-    <div class="card">
-      <h3>Professional Induction</h3>
-      <p>
-        Inducted as a GMCPN by the Computer Professionals
-        (Registration Council of Nigeria) on 21 October 2026.
-      </p>
+      </div>
     </div>
   </section>
 
-  <section id="project">
-    <h2>Featured Technology Project</h2>
+  <!-- EDUCATION -->
+  <section>
+    <div class="container">
 
-    <div class="card">
-      <h3>
-        A Lightweight Network Intrusion Detection System
-        for Small-Scale Enterprises
-      </h3>
+      <div class="section-heading">
+        <div class="section-label">Education</div>
+        <h2>Academic and professional development.</h2>
+      </div>
 
-      <p>
-        An academic project focused on exploring lightweight
-        network monitoring and the identification of selected
-        suspicious traffic patterns in small-scale environments.
-      </p>
+      <div class="education-grid">
 
-      <p>
-        <strong>Areas of interest:</strong>
-        Network security, cybersecurity, intrusion detection,
-        and practical technology solutions.
-      </p>
+        <div class="info-card">
+          <h3>HND — Computer Science</h3>
+          <p>
+            Networking & Cloud Computing
+          </p>
+          <p>
+            The Gateway (ICT) Polytechnic, Saapade
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>ND — Computer Science</h3>
+          <p>
+            Moshood Abiola Polytechnic
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>GMCPN</h3>
+          <p>
+            Inducted by the Computer Professionals
+            (Registration Council of Nigeria)
+          </p>
+          <p>
+            21 October 2026
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section id="skills">
-    <h2>Core Skills &amp; Interests</h2>
+  <!-- PROJECT -->
+  <section id="project" class="project">
+    <div class="container">
 
-    <div class="skills">
-      <span>Inventory Control</span>
-      <span>Warehouse Operations</span>
-      <span>Customer Relationship Management</span>
-      <span>Sales Support</span>
-      <span>Record-Keeping</span>
-      <span>Stock Reconciliation</span>
-      <span>Business Operations</span>
-      <span>Team Coordination</span>
-      <span>Problem Solving</span>
-      <span>Communication</span>
-      <span>Networking</span>
-      <span>Cloud Computing</span>
-      <span>Cybersecurity</span>
+      <div class="section-heading">
+        <div class="section-label">Featured Project</div>
+        <h2>Technology & Cybersecurity</h2>
+        <p>
+          Applying Computer Science knowledge to practical
+          technology challenges.
+        </p>
+      </div>
+
+      <div class="project-card">
+
+        <h3>
+          A Lightweight Network Intrusion Detection System
+          for Small-Scale Enterprises
+        </h3>
+
+        <p>
+          An academic project focused on exploring a lightweight
+          approach to monitoring network activity and identifying
+          selected suspicious traffic patterns in small-scale
+          enterprise environments.
+        </p>
+
+        <br>
+
+        <p>
+          <strong>Focus:</strong>
+          Network security · Intrusion detection · Cybersecurity ·
+          Practical technology solutions
+        </p>
+
+      </div>
     </div>
   </section>
 
+  <!-- SKILLS -->
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="section-label">Skills</div>
+        <h2>What I bring to an organisation.</h2>
+      </div>
+
+      <div class="skills">
+
+        <span class="skill">Business Operations</span>
+        <span class="skill">Warehouse Management</span>
+        <span class="skill">Inventory Control</span>
+        <span class="skill">Stock Reconciliation</span>
+        <span class="skill">Customer Relationship Management</span>
+        <span class="skill">Sales Development</span>
+        <span class="skill">Record Keeping</span>
+        <span class="skill">Team Coordination</span>
+        <span class="skill">Problem Solving</span>
+        <span class="skill">Communication</span>
+        <span class="skill">Networking</span>
+        <span class="skill">Cloud Computing</span>
+        <span class="skill">Cybersecurity</span>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact" class="contact">
-    <h2>Let's Connect</h2>
+    <div class="container contact-grid">
 
-    <p>
-      I welcome professional opportunities, collaboration,
-      and conversations about business operations and technology.
-    </p>
+      <div>
+        <div class="section-heading">
+          <div class="section-label">Contact</div>
+          <h2>Let's connect professionally.</h2>
 
-    <p>Email:
-      <a href="mailto:Samviktoh@gmail.com">Samviktoh@gmail.com</a>
-    </p>
+          <p>
+            I am open to professional opportunities, collaboration
+            and conversations around business operations, customer
+            relationships and technology.
+          </p>
+        </div>
+      </div>
 
-    <p>Phone:
-      <a href="tel:08168370113">08168370113</a>
-    </p>
+      <div class="contact-box">
 
-    <p>LinkedIn:
-      <a href="https://www.linkedin.com/in/samuel-victor"
-         target="_blank" rel="noopener noreferrer">
-        View my LinkedIn profile
-      </a>
-    </p>
+        <div class="contact-item">
+          <small>Email</small>
+          <a href="mailto:Samviktoh@gmail.com">
+            Samviktoh@gmail.com
+          </a>
+        </div>
 
-    <p>
-      <strong>CV:</strong>
-      My updated public-ready CV will be added here when it is ready.
-    </p>
+        <div class="contact-item">
+          <small>Phone</small>
+          <a href="tel:08168370113">
+            08168370113
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <small>LinkedIn</small>
+          <a href="https://www.linkedin.com/in/samuel-victor"
+             target="_blank"
+             rel="noopener noreferrer">
+            View LinkedIn Profile ↗
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <small>Website</small>
+          <a href="https://obayaolarinde.github.io/"
+             target="_blank"
+             rel="noopener noreferrer">
+            obayaolarinde.github.io
+          </a>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-</main>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 <strong>Obaya Olarinde</strong>.
+        All rights reserved.
+      </p>
 
-<footer>
-  <p>&copy; 2026 Obaya Olarinde. All rights reserved.</p>
-  <p>Business Operations | Customer Relationships | Technology</p>
-</footer>
+      <p>
+        Business Operations · Customer Relationships · Technology
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
