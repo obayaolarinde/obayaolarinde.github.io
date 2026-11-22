@@ -38,7 +38,20 @@
     .contact{background:#edf2f7}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact-links{display:grid;gap:12px}.contact-link{padding:15px 17px;border-radius:11px;background:white;border:1px solid var(--line);font-weight:700;overflow-wrap:anywhere}.contact-link span{display:block;color:var(--muted);font-size:.8rem;font-weight:500}
     footer{background:#0b1422;color:#aebaca;padding:24px 0;font-size:.88rem}.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
     @media(max-width:760px){.nav{padding:14px 0;align-items:flex-start;flex-direction:column}nav{gap:12px 17px}.hero{padding:68px 0 62px}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.profile-card{max-width:440px}.quickfacts{grid-template-columns:repeat(2,1fr)}.job{grid-template-columns:1fr;gap:5px}.metrics{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}section{padding:58px 0}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!.job-img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  display: block;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+@media (max-width: 760px) {
+  .job-img {
+    max-width: 100%;
+  }
+}
   </style>
 </head>
 <body>
@@ -92,29 +105,52 @@
     </div>
   </div></section>
 
-  <section id="experience"><div class="wrap">
-    <div class="section-head"><div class="kicker">Career History</div><h2 class="section-title">Professional Experience</h2><p>Experience across FMCG warehousing, business management and retail customer service.</p></div>
     <div class="timeline">
-      <article class="job"><div class="job-date">2021 – 2025</div><div><h3>Warehouse Manager</h3><div class="company">Latoniky Nigeria Enterprises (FMCG)</div><ul>
-        <li>Managed end-to-end warehouse operations, including inventory control, stock monitoring, receiving and dispatching FMCG goods across multiple product lines.</li>
-        <li>Improved stock accuracy through regular stock counts, monitoring and reconciliation processes.</li>
-        <li>Tracked high volumes of stock monthly while maintaining accurate inventory records and minimizing losses.</li>
-        <li>Worked with sales representatives to resolve stock shortages and customer issues, supporting smooth order fulfilment.</li>
-        <li>Supported sales growth by ensuring product availability and reliable stock support for monthly targets.</li>
-      </ul></div></article>
-      <article class="job"><div class="job-date">2021 – 2022</div><div><h3>Sales Attendant</h3><div class="company">242 Colors</div><ul>
-        <li>Assisted customers with product selection and purchasing decisions, providing attentive service.</li>
-        <li>Supported daily sales activities and maintained positive customer relationships.</li>
-        <li>Maintained organised product displays and a clean retail environment.</li>
-      </ul></div></article>
-      <article class="job"><div class="job-date">2014 – 2018</div><div><h3>Manager</h3><div class="company">JB Trinity Ventures</div><ul>
-        <li>Supervised daily business operations and coordinated activities for efficient business performance.</li>
-        <li>Managed stock levels, monitored inventory and maintained accurate records.</li>
-        <li>Attended to customers, supported sales activities and helped build customer retention.</li>
-        <li>Coordinated staff and operational activities, promoting teamwork and productivity.</li>
-      </ul></div></article>
+      <article class="job">
+        <div class="job-date">2021 – 2025</div>
+        <div>
+          <img src="images/warehouse-manager.jpg" alt="Warehouse Manager at Latoniky Nigeria Enterprises" class="job-img">
+          <h3>Warehouse Manager</h3>
+          <div class="company">Latoniky Nigeria Enterprises (FMCG)</div>
+          <ul>
+            <li>Managed end-to-end warehouse operations, including inventory control, stock monitoring, receiving and dispatching FMCG goods across multiple product lines.</li>
+            <li>Improved stock accuracy through regular stock counts, monitoring and reconciliation processes.</li>
+            <li>Tracked high volumes of stock monthly while maintaining accurate inventory records and minimizing losses.</li>
+            <li>Worked with sales representatives to resolve stock shortages and customer issues, supporting smooth order fulfilment.</li>
+            <li>Supported sales growth by ensuring product availability and reliable stock support for monthly targets.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-date">2021 – 2022</div>
+        <div>
+          <img src="images/sales-attendant-boutique.jpg" alt="Sales Attendant at 242 Colors" class="job-img">
+          <h3>Sales Attendant</h3>
+          <div class="company">242 Colors</div>
+          <ul>
+            <li>Assisted customers with product selection and purchasing decisions, providing attentive service.</li>
+            <li>Supported daily sales activities and maintained positive customer relationships.</li>
+            <li>Maintained organised product displays and a clean retail environment.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-date">2014 – 2018</div>
+        <div>
+          <img src="images/business-manager.jpg" alt="Manager at JB Trinity Ventures" class="job-img">
+          <h3>Manager</h3>
+          <div class="company">JB Trinity Ventures</div>
+          <ul>
+            <li>Supervised daily business operations and coordinated activities for efficient business performance.</li>
+            <li>Managed stock levels, monitored inventory and maintained accurate records.</li>
+            <li>Attended to customers, supported sales activities and helped build customer retention.</li>
+            <li>Coordinated staff and operational activities, promoting teamwork and productivity.</li>
+          </ul>
+        </div>
+      </article>
     </div>
-  </div></section>
 
   <section class="impact" id="impact"><div class="wrap">
     <div class="section-head"><div class="kicker">Results &amp; Contribution</div><h2 class="section-title">Achievements that demonstrate impact.</h2><p>Selected outcomes from warehouse and sales support experience.</p></div>
